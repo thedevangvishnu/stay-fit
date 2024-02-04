@@ -1,7 +1,7 @@
 const config = require("../../config");
 
 const EXERCISES_RAPID_API_URL =
-  "https://exercisedb.p.rapidapi.com/exercises?limit=10";
+  "https://exercisedb.p.rapidapi.com/exercises?limit=20";
 const EXERCISES_RAPID_API_OPTIONS = {
   method: "GET",
   headers: {
