@@ -1,5 +1,10 @@
 const express = require("express");
-const { httpGetAllExercises } = require("./exercises.controller");
+const {
+  httpGetAllExercises,
+  httpGetBodyParts,
+  httpGetTargetList,
+  httpGetExerciseByName,
+} = require("./exercises.controller");
 
 const exercisesRouter = express.Router();
 
@@ -13,5 +18,11 @@ All routes:
 */
 
 exercisesRouter.get("/", httpGetAllExercises);
+
+exercisesRouter.get("/bodyParts", httpGetBodyParts);
+
+exercisesRouter.get("/targetList", httpGetTargetList);
+
+exercisesRouter.get("/:name", httpGetExerciseByName);
 
 module.exports = { exercisesRouter };

@@ -39,6 +39,55 @@ const loadExercisesDataFromApi = async () => {
   }
 };
 
+const getAllExercises = async () => {
+  return await exercisesDatabase.find(
+    {},
+    {
+      _id: 0,
+      __v: 0,
+    }
+  );
+};
+
+const getBodyPartsList = async () => {
+  return await exercisesDatabase.distinct("bodyPart");
+};
+
+const getTargetList = async () => {
+  return await exercisesDatabase.distinct("target");
+};
+
+const checkExerciseExists = async (exerciseName) => {
+  const exercise = exercisesDatabase.findOne({
+    name: {
+      $regex: new RegExp(exerciseName, "i"),
+    },
+  });
+
+  return exercise ? true : false;
+};
+
+const getExerciseByName = async (exerciseName) => {
+  const exercises = exercisesDatabase.find(
+    {
+      name: {
+        $regex: new RegExp(exerciseName, "i"),
+      },
+    },
+    {
+      _id: 0,
+      __v: 0,
+    }
+  );
+
+  return exercises;
+};
+
 module.exports = {
   loadExercisesDataFromApi,
+  getAllExercises,
+  getBodyPartsList,
+  getTargetList,
+  checkExerciseExists,
+  getExerciseByName,
 };
