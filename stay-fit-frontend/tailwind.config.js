@@ -15,7 +15,19 @@ module.exports = {
           300: "rgb(12, 10, 10)",
           400: "rgb(4, 4, 4)",
         },
-        redPrimary: "rgb(177, 5, 5)",
+        shadowBlack: {
+          100: "rgba(0,0,0, 0.3)",
+          200: "rgba(0,0,0, 0.5)",
+          300: "rgba(0,0,0, 0.7)",
+          400: "rgba(0,0,0, 0.9)",
+        },
+        redPrimary: {
+          100: "rgb(177, 5, 5)",
+          200: "rgb(170, 5, 5)",
+        },
+      },
+      screens: {
+        xs: { min: "320px", max: "639px" },
       },
     },
   },
