@@ -7,9 +7,9 @@ export const BodyPartsProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchBodyParts = async () => {
-      const response = await fetch("http://localhost:8000/bodyParts");
-      const bodyParts = response.json();
-      setBodyParts(bodyParts);
+      const response = await fetch("http://localhost:8000/exercises/bodyParts");
+      const result = await response.json();
+      setBodyParts(result);
     };
 
     fetchBodyParts();
